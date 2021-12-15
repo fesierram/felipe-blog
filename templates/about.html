@@ -1,0 +1,33 @@
+{% include "header.html" %}
+
+  <!-- Page Header -->
+  <header class="masthead" style="background-image: url({{ url_for('static', filename='img/about-bg.jpg')}})">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="page-heading">
+            <h1>Acerca de mi</h1>
+            <span class="subheading">"Porque por gracia sois salvos por medio de la fe; y esto no de vosotros, pues es don de Dios; no por obras para que nadie se gloríe. Porque somos hechura suya, creados en Cristo Jesús para buenas obras, las cuales Dios preparó de antemano para que anduvieramos en ellas". Efecios 2:8-9</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <div class="container">
+    <div class="row">
+      <span class="avatar"><img src="static/img/corbata.png" alt="" /></span>
+      <div class="col-lg-8 col-md-10 mx-auto">
+        <p>Nacido en la República Dominicana, el 12 de mayo de 1969.</p>
+        <p>Muerto al mundo y nacido en Cristo, salvo por la gracia de Dios que nos ha dado su hijo como Señor y para que todo aquel que en El crea sea salvo por por la fe.</p>
+        <p>Padre de tres hermosas criaturas.</p>
+        <p>Web Page Developer.</p>
+      </div>
+    </div>
+  </div>
+
+  <hr>
+
+  {% include "footer.html" %}
