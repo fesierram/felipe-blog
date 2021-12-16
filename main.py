@@ -12,7 +12,7 @@ from flask_gravatar import Gravatar
 from forms import CreatePostForm, RegisterForm
 from functools import wraps
 from flask_gravatar import Gravatar
-from flask_mail import Mail, Message
+# from flask_mail import Mail, Message
 import os
 #import smtplib
 
@@ -33,14 +33,14 @@ gravatar = Gravatar(app, size=100, rating='g', default='retro', force_default=Fa
 login_manager = LoginManager()
 login_manager.init_app(app)
 
-mail = Mail(app)
-app.config['MAIL_SERVER'] = 'smtp.gmail.com'
-app.config['MAIL_PORT'] = 465
-app.config['MAIL_USERNAME'] = "100daysinpython@hotmail.com"
-app.config['MAIL_PASSWORD'] = "Luciano2015"
-app.config['MAIL_USE_TLS'] = False
-app.config['MAIL_USE_SSL'] = True
-mail = Mail(app)
+# mail = Mail(app)
+# app.config['MAIL_SERVER'] = 'smtp.gmail.com'
+# app.config['MAIL_PORT'] = 465
+# app.config['MAIL_USERNAME'] = "100daysinpython@hotmail.com"
+# app.config['MAIL_PASSWORD'] = "Luciano2015"
+# app.config['MAIL_USE_TLS'] = False
+# app.config['MAIL_USE_SSL'] = True
+# mail = Mail(app)
 
 
 # my_email = "100daysinpython@gmail.com"
@@ -128,6 +128,7 @@ class Mensajes(db.Model):
     email = db.Column(db.String(100), nullable=False)
     phone = db.Column(db.String(50), nullable=False)
     texto = db.Column(db.Text, nullable=False)
+
 
 db.create_all()
 
@@ -297,4 +298,5 @@ def delete_post(post_id):
 
 if __name__ == "__main__":
     # app.run(host='0.0.0.0', port=5000)
-    app.run(debug=True)
+    # app.run(debug=True)
+    app.run()
