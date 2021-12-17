@@ -12,14 +12,7 @@ from flask_gravatar import Gravatar
 from forms import CreatePostForm, RegisterForm
 from functools import wraps
 from flask_gravatar import Gravatar
-# from flask_mail import Mail, Message
 import os
-#import smtplib
-
-# import datetime as dt
-
-# now = dt.datetime.now()
-# year = now.year
 
 
 app = Flask(__name__)
@@ -32,28 +25,6 @@ gravatar = Gravatar(app, size=100, rating='g', default='retro', force_default=Fa
 
 login_manager = LoginManager()
 login_manager.init_app(app)
-
-# mail = Mail(app)
-# app.config['MAIL_SERVER'] = 'smtp.gmail.com'
-# app.config['MAIL_PORT'] = 465
-# app.config['MAIL_USERNAME'] = "100daysinpython@hotmail.com"
-# app.config['MAIL_PASSWORD'] = "Luciano2015"
-# app.config['MAIL_USE_TLS'] = False
-# app.config['MAIL_USE_SSL'] = True
-# mail = Mail(app)
-
-
-# my_email = "100daysinpython@gmail.com"
-# password = "Luciano2015"
-#
-# with smtplib.SMTP("smtp.gmail.com") as connection:
-#     connection.starttls()
-#     connection.login(user=my_email, password=password)
-#     connection.sendmail(
-#         from_addr=my_email,
-#         to_addrs="sierra1269@hotmail.com",
-#         msg="Subject:Hello\n\nThis is the body of my email")
-#     connection.close()
 
 
 ##CONNECT TO DB
@@ -226,9 +197,6 @@ def about():
 def contact():
     form = ContactForm()
     if form.validate_on_submit():
-        # msg = Message("Hello", sender="100daysinpython@gmail.com", recipients=["100daysinpython@gmail.com"])
-        # msg.body = "Hello Flask Message sent"
-        # mail.send(msg)
         new_message = Mensajes(
             date=date.today().strftime("%B %d, %Y"),
             name=form.name.data,
